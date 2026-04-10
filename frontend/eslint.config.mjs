@@ -5,13 +5,64 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+  {
+    files: ["src/**/*.ts", "src/**/*.tsx"],
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    rules: {
+      // --- SONARQUBE & CLEAN CODE ---
+      complexity: ["error", { max: 10 }],
+      "max-depth": ["error", 3],
+      "max-lines-per-function": ["warn", { max: 50, skipBlankLines: true }],
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+
+      // --- TYPESCRIPT STRICTNESS (Guru Level) ---
+      "@typescript-eslint/prefer-readonly": "error",
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
+      ],
+
+      // --- REACT 19 & ARCHITECTURE ---
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+
+      // --- ACCESSIBILITY (A11y) ---
+      "jsx-a11y/alt-text": "error",
+      "jsx-a11y/aria-props": "error",
+      "jsx-a11y/no-static-element-interactions": "warn",
+
+      // Prevent "useEffect" abuse (Antigravity Mandate)
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "react",
+              importNames: ["useEffect"],
+              message:
+                "Move logic to the Antigravity core layer or use Server Actions instead of useEffect where possible.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  // Use globalIgnores as a separate object for clarity in Flat Config
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
+    "*.ts",
+    "*.mjs",
     "next-env.d.ts",
+    "node_modules/**",
+    "src/app/favicon.ico",
   ]),
 ]);
 

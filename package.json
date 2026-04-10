@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0"
+  },
+  "lint-staged": {
+    "frontend/src/**/*.{ts,tsx}": [
+      "pnpm --filter frontend exec eslint --fix"
+    ],
+    "backend/**/*.{ts,tsx}": [
+      "pnpm --filter backend exec eslint --fix"
+    ],
+    "**/*": [
+      "sh -c 'if git diff --cached --name-only | grep -E \"\\.env|\\.pem|id_rsa\"; then echo \"[SECURITY] Error: Secrets detected.\"; exit 1; fi'"
+    ]
+  }
+}

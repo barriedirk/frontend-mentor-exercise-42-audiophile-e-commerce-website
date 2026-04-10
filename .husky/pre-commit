@@ -1,0 +1,7 @@
+echo "Executing validations with pnpm and CodeRabbit"
+
+# Run your linter first
+pnpm lint-staged
+
+# Trigger the CodeRabbit local review
+cr review --type uncommitted --plain

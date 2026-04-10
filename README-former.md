@@ -1,4 +1,4 @@
-## Frontend Mentor - Audiophile e-commerce website
+# Frontend Mentor - Audiophile e-commerce website
 
 ![Design preview for the Audiophile e-commerce website coding challenge](./preview.jpg)
 
@@ -114,8 +114,3 @@ The more specific you are with your questions the more likely it is that another
 We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
 
 **Have fun building!** 🚀
-
-## Prerequisites
-This project uses **Husky** and **CodeRabbit CLI** to ensure code quality.
-Before contributing, please install the CodeRabbit binary:
-`brew install coderabbit && cr auth login`
