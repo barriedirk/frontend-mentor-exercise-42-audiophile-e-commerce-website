@@ -15,7 +15,7 @@
       "pnpm --filter backend exec eslint --fix"
     ],
     "**/*": [
-      "node scripts/check-secrets.js"
+      "bash scripts/check-secrets.sh"
     ]
   }
 }

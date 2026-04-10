@@ -12,8 +12,8 @@ export const CartEngine = {
     return subtotal * VAT_RATE;
   },
 
-  calculateTotal: (subtotal: number, shipping: number): number => {
-    return subtotal + shipping;
+  calculateTotal: (subtotal: number, vat: number, shipping: number): number => {
+    return subtotal + vat + shipping;
   },
 
   /**
@@ -23,7 +23,7 @@ export const CartEngine = {
   getCartSummary: (items: readonly CartItem[]) => {
     const subtotal = CartEngine.calculateSubtotal(items);
     const vat = CartEngine.calculateVat(subtotal);
-    const total = CartEngine.calculateTotal(subtotal, SHIPPING_FEE);
+    const total = CartEngine.calculateTotal(subtotal, vat, SHIPPING_FEE);
 
     return {
       subtotal,
