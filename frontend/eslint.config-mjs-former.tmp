@@ -1,0 +1,84 @@
+import { defineConfig, globalIgnores } from "eslint/config";
+import { FlatCompat } from "@eslint/eslintrc";
+import jsxa11y from "eslint-plugin-jsx-a11y";
+// import nextVitals from "eslint-config-next/core-web-vitals";
+// import nextTs from "eslint-config-next/typescript";
+
+const compat = new FlatCompat({
+  basePath: __dirname,
+});
+
+const eslintConfig = defineConfig([
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    files: ["src/**/*.ts", "src/**/*.tsx"],
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    plugins: {
+      "jsx-a11y": jsxa11y,
+    },
+    rules: {
+      ...jsxa11y.configs.recommended.rules,
+      "jsx-a11y/label-has-associated-control": [
+        "error",
+        {
+          assert: "both",
+        },
+      ],
+      // --- SONARQUBE & CLEAN CODE ---
+      complexity: ["error", { max: 10 }],
+      "max-depth": ["error", 3],
+      "max-lines-per-function": ["warn", { max: 50, skipBlankLines: true }],
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+
+      // --- TYPESCRIPT STRICTNESS (Guru Level) ---
+      "@typescript-eslint/prefer-readonly": "error",
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
+      ],
+
+      // --- REACT 19 & ARCHITECTURE ---
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+
+      // --- ACCESSIBILITY (A11y) ---
+      "jsx-a11y/alt-text": "error",
+      "jsx-a11y/aria-props": "error",
+      "jsx-a11y/no-static-element-interactions": "warn",
+
+      // Prevent "useEffect" abuse (Antigravity Mandate)
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "react",
+              importNames: ["useEffect"],
+              message:
+                "Move logic to the Antigravity core layer or use Server Actions instead of useEffect where possible.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  // Use globalIgnores as a separate object for clarity in Flat Config
+  globalIgnores([
+    ".next/**",
+    "out/**",
+    "build/**",
+    "*.ts",
+    "*.mjs",
+    "next-env.d.ts",
+    "node_modules/**",
+    "src/app/favicon.ico",
+  ]),
+]);
+
+export default eslintConfig;

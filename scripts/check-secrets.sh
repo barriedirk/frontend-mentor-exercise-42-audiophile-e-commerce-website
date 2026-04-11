@@ -4,7 +4,7 @@ set -e
 # Search for staged files that match sensitive patterns
 # Use -E for extended regex
 # We anchor .env with $ to avoid matching .env.example
-SECRETS=$(git diff --cached --name-only | grep -E "\.env$|\.pem$|id_rsa$|\.key$|\.p12$|\.pfx$")
+SECRETS=$(git diff --cached --name-only | grep -E "\.env$|\.pem$|id_rsa$|\.key$|\.p12$|\.pfx$" || true)
 
 if [ -n "$SECRETS" ]; then
     echo "──────────────────────────────────────────────────────────"

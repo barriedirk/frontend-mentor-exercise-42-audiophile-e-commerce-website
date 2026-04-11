@@ -1,5 +1,3 @@
-import PortalRoot from "@/components/ui/PortalRoot";
-
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "@/styles/globals.css";
@@ -12,7 +10,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "Audiophile | Premium Audio Equipment",
-  description: "Experience premium audio with our curated collection of headphones, speakers, and earphones.",
+  description:
+    "Experience premium audio with our curated collection of headphones, speakers, and earphones.",
   authors: [{ name: "Barrie Freyre" }],
   icons: {
     icon: "/assets/favicon-32x32.png",
@@ -30,10 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${manrope.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -57,8 +53,9 @@ export default function RootLayout({
           href="https://www.frontendmentor.io/profile/barriedirk"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}
-        <PortalRoot />
+      <body className="min-h-full flex flex-col">
+        {children}
+        <div id="modal-root" />
       </body>
     </html>
   );
