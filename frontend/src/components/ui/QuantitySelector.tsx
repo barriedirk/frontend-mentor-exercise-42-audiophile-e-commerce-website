@@ -35,7 +35,7 @@ const QuantitySelector = ({
       <button
         type="button"
         onClick={onDecrement}
-        className="px-3 text-black/25 hover:text-primary transition-colors h-full flex items-center justify-center text-[18px]"
+        className="px-3 text-grey-muted hover:text-primary transition-colors h-full flex items-center justify-center text-[18px]"
       >
         -
       </button>
@@ -45,7 +45,7 @@ const QuantitySelector = ({
       <button
         type="button"
         onClick={onIncrement}
-        className="px-3 text-black/25 hover:text-primary transition-colors h-full flex items-center justify-center text-[18px]"
+        className="px-3 text-grey-muted hover:text-primary transition-colors h-full flex items-center justify-center text-[18px]"
       >
         +
       </button>

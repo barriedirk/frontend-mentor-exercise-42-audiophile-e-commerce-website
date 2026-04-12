@@ -7,8 +7,8 @@ const inputVariants = cva(
   {
     variants: {
       state: {
-        idle: "border-[#CFCFCF] focus:border-primary",
-        error: "border-[#CD2C2C] focus:border-[#CD2C2C] border-2",
+        idle: "border-grey-light focus:border-primary",
+        error: "border-error focus:border-error border-2",
       },
       layout: {
         full: "w-full",
@@ -55,12 +55,12 @@ const Input = ({
         <label
           id={labelId}
           htmlFor={inputId}
-          className={cn("text-[12px] font-bold", error && "text-[#CD2C2C]")}
+          className={cn("text-[12px] font-bold", error && "text-error")}
         >
           {label}
         </label>
         {error && (
-          <span id={errorId} className="text-[12px] text-[#CD2C2C] font-medium">
+          <span id={errorId} className="text-[12px] text-error font-medium">
             {error}
           </span>
         )}

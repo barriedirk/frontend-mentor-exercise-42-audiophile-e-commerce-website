@@ -14,11 +14,16 @@
 }
 
 @theme {
+  --color-grey-muted: rgba(0, 0, 0, 0.25);
   --color-primary: #d87d4a;
   --color-primary-light: #fbaf85;
   --color-black-rich: #101010;
   --color-gray-light: #f1f1f1;
   --color-gray-alt: #fafafa;
+
+  --color-grey-dark: #4c4c4c;
+  --color-grey-light: #cfcfcf;
+  --color-error: #cd2c2c;
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui;
 
