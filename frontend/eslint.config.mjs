@@ -24,6 +24,15 @@ const eslintConfig = [
     ],
   },
   {
+    files: [".storybook/main.ts"],
+    languageOptions: {
+      parser: tsParser,
+    },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+    },
+  },
+  {
     files: ["src/**/*.ts", "src/**/*.tsx"],
     languageOptions: {
       parser: tsParser,
@@ -94,6 +103,7 @@ const eslintConfig = [
       ],
     },
   },
+
   ...storybook.configs["flat/recommended"],
 ];
 
