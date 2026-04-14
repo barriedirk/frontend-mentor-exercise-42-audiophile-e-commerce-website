@@ -20,7 +20,7 @@ type Story = StoryObj<typeof ProductRecommendation>;
 export const Default: Story = {
   args: {
     name: "XX99 Mark I",
-    imageSrc: "/shared/desktop/image-xx99-mark-one-headphones.jpg",
+    imageSrc: "/desktop/image-xx99-mark-one-headphones.jpg",
   },
 };
 
@@ -36,15 +36,15 @@ export const RecommendationGrid: Story = {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-8">
       <ProductRecommendation
         name="XX99 Mark I"
-        imageSrc="/shared/desktop/image-xx99-mark-one-headphones.jpg"
+        imageSrc="/desktop/image-xx99-mark-one-headphones.jpg"
       />
       <ProductRecommendation
         name="XX59"
-        imageSrc="/shared/desktop/image-xx59-headphones.jpg"
+        imageSrc="/desktop/image-xx59-headphones.jpg"
       />
       <ProductRecommendation
         name="ZX9 Speaker"
-        imageSrc="/shared/desktop/image-zx9-speaker.jpg"
+        imageSrc="/desktop/image-zx9-speaker.jpg"
       />
     </div>
   ),
