@@ -1,15 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import CartIcon from "../icons/icons/CartIcon";
+import { navLinks } from "@/core/constants/navLinks";
 
 export default function Header() {
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Headphones", href: "/headphones" },
-    { name: "Speakers", href: "/speakers" },
-    { name: "Earphones", href: "/earphones" },
-  ];
-
   return (
     <header className="bg-black border-b border-white/10 sticky top-0 z-50">
       <div className="max-w-[1110px] mx-auto flex items-center justify-between h-[90px] px-6 lg:px-0">
@@ -21,7 +15,7 @@ export default function Header() {
           </svg>
         </div>
 
-        <Link href="/">
+        <Link href="/" aria-label="Home">
           <Image
             src="/desktop/logo.svg"
             alt="audiophile"
@@ -30,15 +24,14 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden lg:flex gap-8">
           {navLinks.map((link) => (
             <Link
-              key={link.name}
+              key={link.label}
               href={link.href}
               className="text-white text-[13px] font-bold uppercase tracking-[2px] hover:text-primary transition-colors"
             >
-              {link.name}
+              {link.label}
             </Link>
           ))}
         </nav>

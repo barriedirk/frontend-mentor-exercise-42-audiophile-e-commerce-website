@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "@/styles/globals.css";
 
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
@@ -31,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} h-full antialiased`}
+      className={`h-full ${manrope.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -58,10 +61,16 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-full flex flex-col"
+        className="min-h-full flex flex-col antialiased"
         suppressHydrationWarning={true}
       >
-        {children}
+        <Header />
+        <main className="flex-1">
+          <div className="max-w-[1110px] mx-auto px-6 lg:px-0 relative">
+            {children}
+          </div>
+        </main>
+        <Footer />
         <div id="modal-root" />
       </body>
     </html>
