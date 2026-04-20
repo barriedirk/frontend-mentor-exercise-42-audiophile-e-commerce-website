@@ -8,8 +8,8 @@ import TwitterIcon from "../icons/icons/TwitterIcon";
 
 export default function Footer() {
   return (
-    <footer className="bg-black pt-12 pb-10 md:pb-12 text-center md:text-left">
-      <div className="max-w-[1110px] mx-auto px-6 lg:px-0 relative">
+    <footer className="bg-black pt-12 pb-10 md:pb-12 text-center md:text-left px-10">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-0 relative">
         <div className="absolute top-[-48px] left-1/2 -translate-x-1/2 w-[101px] h-1 bg-primary md:left-0 md:translate-x-0" />
 
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-9">

@@ -7,7 +7,7 @@ const meta: Meta<typeof ProductFeatures> = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="p-10 max-w-[1110px] mx-auto">
+      <div className="p-10 max-w-[1440px] mx-auto">
         <Story />
       </div>
     ),

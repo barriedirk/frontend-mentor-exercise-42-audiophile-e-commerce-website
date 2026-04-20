@@ -5,8 +5,8 @@ import { navLinks } from "@/core/constants/navLinks";
 
 export default function Header() {
   return (
-    <header className="bg-black border-b border-white/10 sticky top-0 z-50">
-      <div className="max-w-[1110px] mx-auto flex items-center justify-between h-[90px] px-6 lg:px-0">
+    <header className="bg-black border-b border-white/10 sticky top-0 z-50 px-10">
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between h-[90px] px-6 lg:px-0">
         <div className="lg:hidden cursor-pointer">
           <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
             <g fill="#FFF" fillRule="evenodd">

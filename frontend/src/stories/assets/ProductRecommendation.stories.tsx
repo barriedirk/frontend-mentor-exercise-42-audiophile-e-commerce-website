@@ -27,7 +27,7 @@ export const Default: Story = {
 export const RecommendationGrid: Story = {
   decorators: [
     (Story) => (
-      <div className="p-10 w-full max-w-[1110px] mx-auto">
+      <div className="p-10 w-full max-w-[1440px] mx-auto">
         <Story />
       </div>
     ),

@@ -1,0 +1,38 @@
+import { cn } from "@/core/utils/cn";
+import Button from "@/components/ui/Button";
+
+export default function Hero() {
+  return (
+    <div
+      className={cn(
+        "bg-black text-white border-b border-white/10",
+        "bg-[url(/home/desktop/pattern-hero.png)] bg-repeat",
+      )}
+    >
+      <div
+        className={cn(
+          "max-w-[1440px] mx-auto relative",
+          "bg-[url('/home/mobile/image-header.jpg')] bg-contain bg-center bg-no-repeat",
+          "sm:bg-[url('/home/tablet/image-header.jpg')]",
+          "lg:bg-[url('/home/desktop/image-hero.jpg')] lg:bg-cover",
+          "flex justify-center lg:justify-start",
+          "py-[200px] lg:py-[200px]",
+        )}
+      >
+        <div className="flex flex-col items-center lg:items-start gap-[23px] lg:gap-8 max-w-[280px] w-full">
+          <h2 className="text-[14px] font-normal tracking-[10px] opacity-50">
+            NEW PRODUCT
+          </h2>
+          <h1 className="text-[36px] lg:text-[56px] font-bold uppercase leading-tight tracking-[2px] lg:leading-[58px] text-center lg:text-left">
+            XX99 Mark II Headphones
+          </h1>
+          <p className="text-[15px] font-semibold opacity-75 leading-[25px] text-center lg:text-left">
+            Experience natural, lifelike audio and exceptional build quality
+            made for the passionate music enthusiast.
+          </p>
+          <Button>See Product</Button>
+        </div>
+      </div>
+    </div>
+  );
+}

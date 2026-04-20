@@ -65,11 +65,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <Header />
-        <main className="flex-1">
-          <div className="max-w-[1110px] mx-auto px-6 lg:px-0 relative">
-            {children}
-          </div>
-        </main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <div id="modal-root" />
       </body>

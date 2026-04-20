@@ -28,7 +28,7 @@ export const Headphones: Story = {
 export const GridExample: Story = {
   decorators: [
     (Story) => (
-      <div className="max-w-[1100px] mx-auto w-full px-6">
+      <div className="max-w-[1440px] mx-auto w-full px-6">
         <Story />
       </div>
     ),
