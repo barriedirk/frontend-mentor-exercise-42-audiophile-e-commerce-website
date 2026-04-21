@@ -25,7 +25,7 @@ export const DesktopTest: Story = {
 
 export const TabletTest: Story = {
   render: () => (
-    <div className="h-[200vh] max-w[768px]">
+    <div className="h-[200vh] max-w[768px] w-full">
       <Hero />
     </div>
   ),
@@ -33,7 +33,7 @@ export const TabletTest: Story = {
 
 export const MobileTest: Story = {
   render: () => (
-    <div className="h-[200vh] max-w[375px]">
+    <div className="h-[200vh] max-w[375px] w-full">
       <Hero />
     </div>
   ),

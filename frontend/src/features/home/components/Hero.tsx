@@ -5,13 +5,14 @@ export default function Hero() {
   return (
     <section
       className={cn(
-        "bg-[#101010] w-full border-b border-white/10",
+        "bg-black w-full border-b border-white/10",
         "bg-[url(/home/desktop/pattern-hero.png)] bg-repeat",
       )}
     >
       <div
         className={cn(
-          "max-w-[1110px] mx-auto relative min-h-[510px] md:min-h-[630px] lg:min-h-[600px]",
+          "max-w-[1440px] mx-auto relative px-[10px]",
+          "min-h-[510px] md:min-h-[630px] lg:min-h-[600px]",
           "flex items-center justify-center lg:justify-start",
           "bg-no-repeat bg-bottom bg-[length:auto_100%]",
           "bg-[url('/home/mobile/image-header.jpg')]",
