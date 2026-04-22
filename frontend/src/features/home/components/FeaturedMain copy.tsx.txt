@@ -1,0 +1,49 @@
+import { cn } from "@/core/utils/cn";
+import Button from "@/components/ui/Button";
+
+export default function FeaturedMain() {
+  return (
+    <div className="px-5">
+      <div
+        className={cn(
+          "z-10 max-w-[1110px] mx-auto px-6 lg:px-0 bg-primary text-white",
+          "grid grid-cols-1 lg:grid-cols-2 items-center",
+          "lg:h-[560px] rounded-[10px] p-6",
+          "bg-[url('/home/desktop/pattern-circles.svg')] bg-[length:auto_100%]",
+        )}
+      >
+        <div className="flex flex-col-reverse items-center w-full h-full">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet="/home/desktop/image-speaker-zx9.png"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet="/home/tablet/image-speaker-zx9.png"
+            />
+            <img
+              src="/home/mobile/image-speaker-zx9.png"
+              alt="ZX9 Speaker"
+              className="max-w-[156px] md:max-w-[192px] lg:max-w-[410px] h-auto"
+            />
+          </picture>
+        </div>
+        <div className="flex justify-center items-center p-10">
+          <div className="max-w-[349px] flex flex-col gap-5">
+            <h2 className="text-white font-bold text-[56px] leading-[56px]">
+              ZX9 SPEAKER
+            </h2>
+            <p className="text-white/75 font-medium text-[15px] leading-[25px]">
+              Upgrade to premium speakers that are phenomenally built to deliver
+              truly remarkable sound.
+            </p>
+            <Button variant="secondary" className="font-bold text-[13px]">
+              See Product
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
