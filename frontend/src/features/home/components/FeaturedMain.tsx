@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 
 export default function FeaturedMain() {
   return (
-    <div className="px-6 lg:px-0 mb-12" aria-labelledby="zx9-heading">
+    <section className="px-6 lg:px-0 mb-12" aria-labelledby="zx9-heading">
       <div
         className={cn(
           "max-w-[1110px] mx-auto bg-primary text-white rounded-lg overflow-hidden relative",
@@ -33,7 +33,10 @@ export default function FeaturedMain() {
 
         <div className="flex justify-center lg:justify-start items-center px-6 md:px-10 mt-8 lg:mt-0">
           <div className="max-w-[349px] flex flex-col items-center lg:items-start gap-6 lg:gap-10 text-center lg:text-left">
-            <h2 className="text-white font-bold text-[36px] md:text-[56px] leading-[1] tracking-[1.29px] md:tracking-[2px] uppercase">
+            <h2
+              id="zx9-heading"
+              className="text-white font-bold text-[36px] md:text-[56px] leading-[1] tracking-[1.29px] md:tracking-[2px] uppercase"
+            >
               ZX9 <br className="hidden md:block" /> SPEAKER
             </h2>
             <p className="text-white/75 font-medium text-[15px] leading-[25px]">
@@ -46,6 +49,6 @@ export default function FeaturedMain() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

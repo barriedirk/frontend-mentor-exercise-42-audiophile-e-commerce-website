@@ -3,7 +3,6 @@ import Button from "@/components/ui/Button";
 
 export default function FeaturedSecondary() {
   return (
-    // 1. Semantic Wrap: Use <section> for major page blocks
     <section className="px-6 xl:px-0 mb-12" aria-labelledby="zx7-heading">
       <div
         className={cn(
@@ -26,7 +25,7 @@ export default function FeaturedSecondary() {
             </h2>
             <Button
               variant="outline"
-              className="w-[160px] border-black text-black hover:bg-black hover:text-white transition-colors"
+              className="w-[200px] border-black text-black hover:bg-black hover:text-white transition-colors"
             >
               See Product
             </Button>

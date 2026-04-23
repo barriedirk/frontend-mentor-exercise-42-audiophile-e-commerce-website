@@ -1,0 +1,52 @@
+import { cn } from "@/core/utils/cn";
+import Button from "@/components/ui/Button";
+
+export default function FeaturedTertiary() {
+  return (
+    <section className="px-6 relative" aria-labelledby="yx1-heading">
+      <div
+        className={cn(
+          "max-w-[1110px] mx-auto",
+          "flex flex-col lg:flex-row gap-[40px]",
+        )}
+      >
+        <div className="flex-1">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet="/home/desktop/image-earphones-yx1.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet="/home/tablet/image-earphones-yx1.jpg"
+            />
+            <img
+              src="/home/mobile/image-earphones-yx1.jpg"
+              alt="YX1 Earphones"
+              className="w-full h-auto rounded-lg"
+            />
+          </picture>
+        </div>
+        <div
+          className={cn(
+            "flex-1 flex flex-col justify-center items-center gap-8 min-h-[200px]",
+            "bg-gray-light rounded-lg",
+          )}
+        >
+          <h2
+            id="yx1-heading"
+            className="text-black font-bold text-[28px] tracking-[2px] uppercase"
+          >
+            YX1 EARPHONES
+          </h2>
+          <Button
+            variant="outline"
+            className="w-[200px] border-black text-black hover:bg-black hover:text-white transition-colors"
+          >
+            See Product
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
