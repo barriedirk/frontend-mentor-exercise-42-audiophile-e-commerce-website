@@ -3,19 +3,17 @@ import Button from "@/components/ui/Button";
 
 export default function FeaturedMain() {
   return (
-    <div className="px-6 lg:px-0 mb-12">
+    <div className="px-6 lg:px-0 mb-12" aria-labelledby="zx9-heading">
       <div
         className={cn(
           "max-w-[1110px] mx-auto bg-primary text-white rounded-lg overflow-hidden relative",
           "grid grid-cols-1 lg:grid-cols-2 items-center",
           "pt-14 pb-14 lg:pt-0 lg:pb-0 lg:h-[560px]",
-          // Background Pattern Logic: Center on mobile, pull left on desktop
           "bg-[url('/home/desktop/pattern-circles.svg')] bg-no-repeat",
           "bg-[position:center_-120px] lg:bg-[position:-150px_-150px] bg-[length:150%_auto] lg:bg-[length:auto_170%]",
         )}
       >
         <div className="flex justify-center items-center h-full relative lg:static">
-          {/* Use lg:static here so the absolute image relates to the orange box, not this div */}
           <picture>
             <source
               media="(min-width: 1024px)"
@@ -42,7 +40,7 @@ export default function FeaturedMain() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Button variant="secondary" className="w-[160px]">
+            <Button variant="secondary" className="w-[200px]">
               See Product
             </Button>
           </div>
