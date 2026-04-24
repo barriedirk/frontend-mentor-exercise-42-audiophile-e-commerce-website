@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AboutSection from "@/components/shared/AboutSection";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -65,7 +66,10 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          {children}
+          <AboutSection />
+        </main>
         <Footer />
         <div id="modal-root" />
       </body>
