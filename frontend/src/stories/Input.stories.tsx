@@ -20,7 +20,6 @@ const meta: Meta<typeof Input> = {
       description: "Error message. When present, it forces the error state.",
     },
   },
-  // Center it so it doesn't look stretched on large screens
   decorators: [
     (Story) => (
       <div style={{ maxWidth: "400px", margin: "0 auto" }}>

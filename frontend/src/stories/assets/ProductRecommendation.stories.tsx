@@ -19,33 +19,36 @@ type Story = StoryObj<typeof ProductRecommendation>;
 
 export const Default: Story = {
   args: {
-    name: "XX99 Mark I",
-    imageSrc: "/desktop/image-xx99-mark-one-headphones.jpg",
+    isNewProduct: true,
+    images: {
+      mobile:
+        "/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg",
+      tablet:
+        "/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
+      desktop:
+        "/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
+    },
+    name: "XX99 Mark II",
+    title: "XX99 Mark II Headphones",
+    description:
+      "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
   },
 };
 
-export const RecommendationGrid: Story = {
-  decorators: [
-    (Story) => (
-      <div className="p-10 w-full max-w-[1440px] mx-auto">
-        <Story />
-      </div>
-    ),
-  ],
-  render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-8">
-      <ProductRecommendation
-        name="XX99 Mark I"
-        imageSrc="/desktop/image-xx99-mark-one-headphones.jpg"
-      />
-      <ProductRecommendation
-        name="XX59"
-        imageSrc="/desktop/image-xx59-headphones.jpg"
-      />
-      <ProductRecommendation
-        name="ZX9 Speaker"
-        imageSrc="/desktop/image-zx9-speaker.jpg"
-      />
-    </div>
-  ),
+export const Reverse: Story = {
+  args: {
+    reversed: true,
+    name: "XX99 Mark I",
+    title: "XX99 Mark I Headphones",
+    description:
+      "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
+    images: {
+      mobile:
+        "/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg",
+      tablet:
+        "/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg",
+      desktop:
+        "/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
+    },
+  },
 };

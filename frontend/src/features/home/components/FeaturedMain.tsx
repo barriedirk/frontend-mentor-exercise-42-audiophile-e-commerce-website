@@ -1,5 +1,6 @@
 import { cn } from "@/core/utils/cn";
 import Button from "@/components/ui/Button";
+import Picture from "@/components/ui/Picture";
 
 export default function FeaturedMain() {
   return (
@@ -14,21 +15,13 @@ export default function FeaturedMain() {
         )}
       >
         <div className="flex justify-center items-center h-full relative lg:static">
-          <picture>
-            <source
-              media="(min-width: 1024px)"
-              srcSet="/home/desktop/image-speaker-zx9.png"
-            />
-            <source
-              media="(min-width: 768px)"
-              srcSet="/home/tablet/image-speaker-zx9.png"
-            />
-            <img
-              src="/home/mobile/image-speaker-zx9.png"
-              alt="ZX9 Speaker"
-              className="max-w-[172px] md:max-w-[197px] lg:max-w-none lg:h-[493px] h-auto lg:absolute lg:bottom-0 lg:left-[8%] z-10"
-            />
-          </picture>
+          <Picture
+            mobile="/home/mobile/image-speaker-zx9.png"
+            tablet="/home/tablet/image-speaker-zx9.png"
+            desktop="/home/desktop/image-speaker-zx9.png"
+            alt="ZX9 Speaker"
+            className="max-w-[172px] md:max-w-[197px] lg:max-w-none lg:h-[493px] h-auto lg:absolute lg:bottom-0 lg:left-[8%] z-10"
+          />
         </div>
 
         <div className="flex justify-center lg:justify-start items-center px-6 md:px-10 mt-8 lg:mt-0">
