@@ -38,7 +38,7 @@ export const GridExample: Story = {
       <CategoryCard
         title="Headphones"
         href="/headphones"
-        imageSrc="/desktop/image-category-thumbnail-earphones.png"
+        imageSrc="/desktop/image-category-thumbnail-headphones.png "
       />
       <CategoryCard
         title="Speakers"

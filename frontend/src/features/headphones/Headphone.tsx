@@ -1,3 +1,4 @@
+import CategoryCard from "@/components/ui/CategoryCard";
 import Heading from "@/components/ui/Heading";
 import ProductRecommendation from "@/components/ui/ProductRecommendation";
 
@@ -6,7 +7,7 @@ export default function Headphones() {
     <>
       <Heading text="Headphones" level="h1" />
 
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-[1440px] mx-auto px-6">
         <ProductRecommendation
           className="my-[40px] lg:my-[120px]"
           isNewProduct={true}
@@ -51,6 +52,24 @@ export default function Headphones() {
           title="XX59 Headphones"
           description="Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move."
         />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-8 pt-20 my-[40px] lg:my-[120px]">
+          <CategoryCard
+            title="Headphones"
+            href="/headphones"
+            imageSrc="/desktop/image-category-thumbnail-headphones.png"
+          />
+          <CategoryCard
+            title="Speakers"
+            href="/speakers"
+            imageSrc="/desktop/image-category-thumbnail-speakers.png"
+          />
+          <CategoryCard
+            title="Earphones"
+            href="/earphones"
+            imageSrc="/desktop/image-category-thumbnail-earphones.png"
+          />
+        </div>
       </div>
     </>
   );
