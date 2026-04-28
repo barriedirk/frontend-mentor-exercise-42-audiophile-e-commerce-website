@@ -1,3 +1,5 @@
+import Speakers from "@/features/speakers/Speakers";
+
 export default function SpeakersPage() {
-  return <h1>Speakers</h1>;
+  return <Speakers />;
 }
