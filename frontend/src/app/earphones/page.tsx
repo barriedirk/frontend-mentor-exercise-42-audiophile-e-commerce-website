@@ -1,3 +1,5 @@
+import Earphones from "@/features/earphones/Earphones";
+
 export default function EarphonesPage() {
-  return <h1>Earphones</h1>;
+  return <Earphones />;
 }

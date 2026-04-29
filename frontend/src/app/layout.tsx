@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full ${manrope.variable} h-full antialiased`}
+      className={`h-full ${manrope.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -62,14 +62,17 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-full flex flex-col antialiased"
+        className="min-h-full flex flex-col"
         suppressHydrationWarning={true}
       >
+        <a href="#main-content" className="sr-only focus:not-sr-only">
+          Skip to content
+        </a>
         <Header />
-        <main className="flex-1">
+        <main className="flex-1" id="main-content">
           {children}
-          <AboutSection />
         </main>
+        <AboutSection />
         <Footer />
         <div id="modal-root" />
       </body>
