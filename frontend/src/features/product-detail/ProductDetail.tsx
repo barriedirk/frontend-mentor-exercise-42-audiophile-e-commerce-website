@@ -10,12 +10,14 @@ import QuantitySelector from "@/components/ui/QuantitySelector";
 import type { Product } from "@/core/types/product.types";
 import { useState } from "react";
 import CategoryLinks from "../../components/ui/CategoryLinks";
+import { useCartStore } from "@/core/store/useCartStore";
 
 interface ProductDetailProps {
   readonly product: Product;
 }
 
 export default function ProductDetail({ product }: ProductDetailProps) {
+  const addToCart = useCartStore((state) => state.addToCart);
   const [quantity, setQuantity] = useState<number>(1);
 
   return (
@@ -54,7 +56,9 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               quantity={quantity}
             />
 
-            <Button>Add to cart</Button>
+            <Button onClick={() => addToCart(product, quantity)}>
+              Add to cart
+            </Button>
           </section>
         </div>
       </article>
