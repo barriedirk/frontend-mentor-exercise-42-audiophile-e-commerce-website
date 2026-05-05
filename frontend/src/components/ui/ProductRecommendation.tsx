@@ -18,6 +18,7 @@ interface ProductRecommendationProps {
   readonly className?: string;
   readonly isNewProduct?: boolean;
   readonly reversed?: boolean;
+  readonly href?: string;
 }
 
 export default function ProductRecommendation({
@@ -29,6 +30,7 @@ export default function ProductRecommendation({
   description,
   isNewProduct = false,
   reversed = false,
+  href = "#",
 }: ProductRecommendationProps) {
   return (
     <div
@@ -76,7 +78,11 @@ export default function ProductRecommendation({
               {description}
             </p>
           )}
-          <Button variant="primary" aria-label={`See product ${name}`}>
+          <Button
+            variant="primary"
+            aria-label={`See product ${name}`}
+            href={href}
+          >
             See Product
           </Button>
         </div>

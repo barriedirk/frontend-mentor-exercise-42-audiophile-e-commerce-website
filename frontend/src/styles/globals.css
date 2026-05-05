@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+
 :root {
   /* Brand Colors */
   --primary: 22 65% 57%; /* #D87D4A - Orange */

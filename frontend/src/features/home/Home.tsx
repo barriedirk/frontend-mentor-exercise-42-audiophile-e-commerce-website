@@ -1,5 +1,5 @@
 import Hero from "./components/Hero";
-import CategoryLinks from "./components/CategoryLinks";
+import CategoryLinks from "../../components/ui/CategoryLinks";
 import FeaturedMain from "./components/FeaturedMain";
 import FeaturedSecondary from "./components/FeaturedSecondary";
 import FeaturedTertiary from "./components/FeaturedTertiary";

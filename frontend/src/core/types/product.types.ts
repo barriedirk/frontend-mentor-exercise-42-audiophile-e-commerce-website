@@ -12,13 +12,47 @@ export interface Product {
   readonly name: string;
   readonly image: ProductImage;
   readonly category: Category;
-  readonly description: string;
+  readonly categoryImage: ProductImage;
+  readonly new: boolean;
   readonly price: number;
+  readonly description: string;
   readonly features: string;
-  readonly isNew: boolean;
+  readonly includes: ProductIncludes[];
+  readonly gallery: ProductGallery;
+  readonly others: ProductOther[];
 }
 
-export interface CartItem extends Pick<Product, "id" | "name" | "price"> {
+export interface Image {
+  readonly mobile: string;
+  readonly tablet: string;
+  readonly desktop: string;
+}
+
+export interface CategoryImage {
+  readonly mobile: string;
+  readonly tablet: string;
+  readonly desktop: string;
+}
+
+export interface ProductIncludes {
   readonly quantity: number;
-  readonly thumbnail: string;
+  readonly item: string;
+}
+
+export interface ProductGallery {
+  readonly first: Image;
+  readonly second: Image;
+  readonly third: Image;
+}
+
+export interface ProductOther {
+  readonly slug: string;
+  readonly name: string;
+  readonly image: Image2;
+}
+
+export interface Image2 {
+  readonly mobile: string;
+  readonly tablet: string;
+  readonly desktop: string;
 }

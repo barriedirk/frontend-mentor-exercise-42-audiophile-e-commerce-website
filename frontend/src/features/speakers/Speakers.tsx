@@ -21,6 +21,7 @@ export default function Speakers() {
             name="ZX9 SPEAKER"
             title="ZX9 SPEAKER"
             description="Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups."
+            href="/product/zx9-speaker"
           />
           <ProductRecommendation
             reversed={true}
@@ -33,9 +34,10 @@ export default function Speakers() {
               desktop:
                 "/product-zx7-speaker/desktop/image-category-page-preview.jpg",
             }}
-            name="ZX7 SPEAKER"
+            name="ZX7"
             title="ZX7 SPEAKER"
             description="Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."
+            href="/product/zx7-speaker"
           />
         </div>
         <nav aria-label="Category navigation" className="pt-20 pb-32">
@@ -48,7 +50,7 @@ export default function Speakers() {
             <CategoryCard
               title="Speakers"
               href="/speakers"
-              imageSrc="/desktop/image-category-thumbnail-speakers.png"
+              imageSrc="/desktop/image-category-thumbnail-sppeakers.png"
             />
             <CategoryCard
               title="Earphones"
