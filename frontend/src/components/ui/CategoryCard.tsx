@@ -8,6 +8,7 @@ interface CategoryCardProps {
   readonly href: string;
   readonly imageSrc: string;
   readonly className?: string;
+  readonly onClick?: () => void;
 }
 
 export default function CategoryCard({
@@ -15,10 +16,12 @@ export default function CategoryCard({
   href,
   imageSrc,
   className,
+  onClick,
 }: CategoryCardProps) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={cn(
         "group relative flex flex-col items-center w-full bg-gray-light rounded-lg pb-5 px-4 lg:pb-8",
         className,

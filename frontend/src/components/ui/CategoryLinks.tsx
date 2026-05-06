@@ -4,11 +4,13 @@ import { cn } from "@/core/utils/cn";
 interface CategoryLinksProps {
   readonly className?: string;
   readonly cardClassName?: string;
+  readonly onClick?: () => void;
 }
 
 export default function CategoryLinks({
   className,
   cardClassName,
+  onClick,
 }: CategoryLinksProps) {
   return (
     <aside
@@ -22,6 +24,7 @@ export default function CategoryLinks({
               href="/headphones"
               imageSrc="/shared/desktop/image-category-thumbnail-headphones.png"
               title="Headphones"
+              onClick={onClick}
               className={cn("max-w-[350px] mx-auto", cardClassName)}
             />
           </li>
@@ -30,6 +33,7 @@ export default function CategoryLinks({
               href="/speakers"
               imageSrc="/shared/desktop/image-category-thumbnail-speakers.png"
               title="Speakers"
+              onClick={onClick}
               className={cn("max-w-[350px] mx-auto", cardClassName)}
             />
           </li>
@@ -38,6 +42,7 @@ export default function CategoryLinks({
               href="/earphones"
               imageSrc="/shared/desktop/image-category-thumbnail-earphones.png"
               title="Earphones"
+              onClick={onClick}
               className={cn("max-w-[350px] mx-auto", cardClassName)}
             />
           </li>
