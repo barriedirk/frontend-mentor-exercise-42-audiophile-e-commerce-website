@@ -7,9 +7,11 @@ import CartIcon from "../icons/icons/CartIcon";
 import { navLinks } from "@/core/constants/navLinks";
 import CategoryLinks from "../ui/CategoryLinks";
 import { cn } from "@/core/utils/cn";
+import { CartModal } from "@/features/cart";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <>
@@ -50,7 +52,14 @@ export default function Header() {
           </nav>
 
           <div className="cursor-pointer">
-            <CartIcon className="h-[20px] w-[23px]" />
+            <button
+              onClick={() => setIsCartOpen(!isCartOpen)}
+              aria-label="Toggle Cart"
+              aria-expanded={isCartOpen}
+              className="bg-transparent border-none"
+            >
+              <CartIcon className="h-[20px] w-[23px]" />
+            </button>
           </div>
         </div>
 
@@ -72,6 +81,9 @@ export default function Header() {
           onClick={() => setIsMenuOpen(false)}
           aria-hidden="true"
         />
+      )}
+      {isCartOpen && (
+        <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       )}
     </>
   );
