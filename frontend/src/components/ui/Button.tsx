@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/core/utils/cn";
 import Link from "next/link";
+import Loader from "./Loader";
 
 const buttonVariants = cva(
   "px-8 py-4 uppercase tracking-[1px] text-[13px] font-bold transition-colors duration-300 disabled:opacity-50",
@@ -42,13 +43,20 @@ type ButtonAsLink = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 type ButtonProps = VariantProps<typeof buttonVariants> &
-  (ButtonAsButton | ButtonAsLink);
+  (ButtonAsButton | ButtonAsLink) & {
+    disabled?: boolean;
+    loading?: boolean;
+    type?: "button" | "submit" | "reset";
+  };
 
 const Button = ({
   className,
   variant,
   size,
   fullWidth,
+  disabled,
+  loading,
+  type = "button",
   ...props
 }: ButtonProps) => {
   const classes = cn(buttonVariants({ variant, size, fullWidth, className }));
@@ -65,8 +73,13 @@ const Button = ({
 
   const buttonProps = props as ButtonAsButton;
   return (
-    <button className={classes} {...buttonProps}>
-      {props.children}
+    <button
+      className={classes}
+      {...buttonProps}
+      disabled={disabled || loading}
+      type={type}
+    >
+      {loading && <Loader />} {props.children}
     </button>
   );
 };

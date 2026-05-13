@@ -4,8 +4,8 @@ import CartSummary from "./CartSummary";
 import CartEmpty from "./CartEmpty";
 
 interface CartModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  readonly isOpen: boolean;
+  readonly onClose: () => void;
 }
 
 export default function CartModal({ isOpen, onClose }: CartModalProps) {

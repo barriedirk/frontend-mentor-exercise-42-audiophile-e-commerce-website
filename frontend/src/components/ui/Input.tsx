@@ -48,6 +48,7 @@ const Input = ({
     <div
       className={cn(
         "flex flex-col gap-2",
+        className,
         layout === "half" ? "w-1/2" : "w-full",
       )}
     >

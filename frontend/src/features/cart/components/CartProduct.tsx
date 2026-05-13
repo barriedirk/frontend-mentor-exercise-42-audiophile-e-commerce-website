@@ -4,11 +4,11 @@ import { CartItem } from "@/core/types/cartItem.types";
 
 import Image from "next/image";
 
-interface CartItemProps {
+interface CartProductProps {
   readonly item: CartItem;
 }
 
-export default function CartProduct({ item }: CartItemProps) {
+export default function CartProduct({ item }: CartProductProps) {
   const updateQuantity = useCartStore((state) => state.updateQuantity);
 
   const { id, name, price, image, quantity } = item;

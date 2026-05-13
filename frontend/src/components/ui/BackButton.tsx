@@ -2,15 +2,20 @@
 
 import { useRouter } from "next/navigation";
 import Button from "./Button";
+import { cn } from "@/core/utils/cn";
 
-export default function BackButton() {
+interface BackButtonProps {
+  readonly className?: string;
+}
+
+export default function BackButton({ className }: BackButtonProps) {
   const router = useRouter();
 
   return (
     <Button
       variant="ghost"
       size={"lg"}
-      className="capitalize"
+      className={cn("capitalize", className)}
       onClick={() => router.back()}
     >
       Go Back

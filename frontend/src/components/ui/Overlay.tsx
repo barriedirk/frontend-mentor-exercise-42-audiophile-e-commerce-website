@@ -14,6 +14,12 @@ export default function Overlay({
   children,
   className,
 }: OverlayProps) {
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClick?.();
+    }
+  };
+
   return (
     <div
       className={cn(
@@ -21,7 +27,7 @@ export default function Overlay({
         "flex p-6 justify-center md:justify-end md:pr-[max(24px,calc((100vw-1110px)/2))]",
         className,
       )}
-      onClick={onClick}
+      onClick={handleOverlayClick}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           onClick?.();

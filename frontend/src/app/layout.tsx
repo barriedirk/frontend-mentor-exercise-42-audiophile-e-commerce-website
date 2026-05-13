@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AboutSection from "@/components/shared/AboutSection";
+import ConditionalWrapper from "@/components/layout/ConditionalWrapper";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -72,7 +73,11 @@ export default function RootLayout({
         <main className="flex-1" id="main-content">
           {children}
         </main>
-        <AboutSection />
+
+        <ConditionalWrapper noShowPath="/checkout">
+          <AboutSection />
+        </ConditionalWrapper>
+
         <Footer />
         <div id="modal-root" />
       </body>

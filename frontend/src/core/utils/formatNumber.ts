@@ -12,3 +12,10 @@ export function formatCurrency(num: number): string {
 
   return currencyFormatter.format(num);
 }
+
+export function formatPrice(num: number): string {
+  return num.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
