@@ -1,11 +1,9 @@
 import { useRef } from "react";
 
 export function useFocusFirstInput<T extends HTMLElement = HTMLFormElement>() {
-  // Use a ref to store a persistent reference to the observer across renders
   const observerRef = useRef<MutationObserver | null>(null);
 
   const containerRef = (node: T | null) => {
-    // 🧹 CLEANUP: If the component unmounts or node changes, clean up the old observer
     if (observerRef.current) {
       observerRef.current.disconnect();
       observerRef.current = null;
