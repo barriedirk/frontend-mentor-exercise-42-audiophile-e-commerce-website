@@ -165,6 +165,7 @@ export default function CheckoutForm({
               mask="INTEGER_NUMBERS"
               inputMode="numeric"
               maxLength={11}
+              disabled={disabled}
             />
             <FormInput
               control={control}
@@ -174,6 +175,7 @@ export default function CheckoutForm({
               mask="INTEGER_NUMBERS"
               inputMode="numeric"
               maxLength={4}
+              disabled={disabled}
             />
           </div>
         )}

@@ -33,6 +33,7 @@ export default function Checkout() {
     items: CartItem[];
     total: number;
   } | null>(null);
+  const [paymentError, setPaymentError] = useState<string | null>(null);
 
   const cartItems = useCartStore((state) => state.cart);
   const totalPrice = useCartStore((state) => state.getTotalPrice());
@@ -85,6 +86,9 @@ export default function Checkout() {
       }
     } catch (error) {
       console.error("Payment failed", error);
+      setPaymentError(
+        "Your transaction could not be processed. Please check your payment details or try again later.",
+      );
     }
   };
 
@@ -125,6 +129,11 @@ export default function Checkout() {
                   isTotal={true}
                   className="mt-5"
                 />
+                {paymentError && (
+                  <div className="p-4 mt-4 text-sm text-error bg-error/10 rounded-md border border-error">
+                    {paymentError}
+                  </div>
+                )}
               </div>
 
               <Button
