@@ -1,6 +1,7 @@
 import { navLinks } from "@/core/constants/navLinks";
 import Image from "next/image";
 import Link from "next/link";
+import NavLink from "./NavLink";
 
 import FacebookIcon from "../icons/icons/FacebookIcon";
 import InstagramIcon from "../icons/icons/InstagramIcon";
@@ -24,13 +25,7 @@ export default function Footer() {
           </Link>
           <nav className="flex flex-col md:flex-row gap-8 items-center">
             {navLinks.map((link) => (
-              <Link
-                href={link.href}
-                key={link.label}
-                className="text-white text-[13px] font-bold uppercase tracking-[2px] hover:text-primary"
-              >
-                {link.label}
-              </Link>
+              <NavLink {...link} />
             ))}
           </nav>
         </div>

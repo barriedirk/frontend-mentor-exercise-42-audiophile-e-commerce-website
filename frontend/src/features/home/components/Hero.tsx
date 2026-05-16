@@ -20,7 +20,7 @@ export default function Hero() {
           "lg:bg-[url('/home/desktop/image-hero.jpg')] lg:bg-right",
         )}
       >
-        <div className="z-10 flex flex-col items-center lg:items-start gap-6 max-w-[328px] md:max-w-[396px] px-6 lg:px-0">
+        <div className="z-10 flex flex-col items-center lg:items-start gap-6 max-w-[328px] md:max-w-[396px] px-2 lg:px-1">
           <span className="text-[14px] font-normal tracking-[10px] text-white/50 uppercase">
             NEW PRODUCT
           </span>

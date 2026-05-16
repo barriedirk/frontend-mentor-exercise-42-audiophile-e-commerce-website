@@ -17,7 +17,7 @@ export default function CategoryLinks({
       aria-label="Related categories"
       className={cn("px-10 relative py-16 lg:py-[110px]", className)}
     >
-      <nav className="max-w-[1110px] mx-auto px-6 lg:px-0">
+      <nav className="max-w-[1110px] mx-auto px-2 lg:px-1">
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-y-20 md:gap-x-8 pt-20 list-none p-0 m-0">
           <li>
             <CategoryCard
