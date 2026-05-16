@@ -6,8 +6,8 @@ interface LoaderProps {
 }
 
 const Loader = ({
-  size = "h-10 w-10",
-  color = "border-blue-500",
+  size = "h-5 w-5",
+  color = "border-grey-300",
 }: LoaderProps) => {
   return (
     <div className="flex justify-center items-center">

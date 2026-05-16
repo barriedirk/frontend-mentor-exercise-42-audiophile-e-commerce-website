@@ -13,7 +13,11 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      {cart.length === 0 ? <CartEmpty onClose={onClose} /> : <CartSummary />}
+      {cart.length === 0 ? (
+        <CartEmpty onClose={onClose} />
+      ) : (
+        <CartSummary onClose={onClose} />
+      )}
     </Modal>
   );
 }

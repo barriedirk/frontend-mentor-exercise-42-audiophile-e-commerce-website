@@ -13,6 +13,8 @@ interface ModalProps {
   readonly children: ReactNode;
   readonly titleId?: string;
   readonly containerId?: string;
+  readonly size?: "sm" | "md" | "lg";
+  readonly isCentered?: boolean;
 }
 
 export default function Modal({
@@ -23,13 +25,20 @@ export default function Modal({
   onClose,
   children,
   containerId,
+  size,
+  isCentered = false,
 }: ModalProps) {
   if (!isOpen) return null;
 
   return (
     <Portal containerId={containerId}>
-      <Overlay onClick={onClose}>
-        <Dialog title={title} titleClassName={titleClassName} titleId={titleId}>
+      <Overlay onClick={onClose} isCentered={isCentered}>
+        <Dialog
+          title={title}
+          titleClassName={titleClassName}
+          titleId={titleId}
+          size={size}
+        >
           {children}
         </Dialog>
       </Overlay>

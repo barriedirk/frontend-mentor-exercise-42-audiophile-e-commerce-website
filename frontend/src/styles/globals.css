@@ -34,6 +34,19 @@
   --tracking-h3: 1.15px;
   --tracking-overline: 10px;
   --tracking-subtitle: 1px;
+
+  --animate-fade-in-up: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 @theme inline {

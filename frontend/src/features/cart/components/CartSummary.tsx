@@ -1,10 +1,15 @@
 import Button from "@/components/ui/Button";
 import { useCartStore } from "@/core/store/useCartStore";
 import CartProduct from "./CartProduct";
+import { useRouter } from "next/navigation";
 
-export default function CartSummary() {
+interface CartSummaryProps {
+  readonly onClose: () => void;
+}
+
+export default function CartSummary({ onClose }: CartSummaryProps) {
+  const router = useRouter();
   const cart = useCartStore((state) => state.cart);
-
   const totalPrice = useCartStore((state) => state.getTotalPrice());
   return (
     <section
@@ -47,6 +52,10 @@ export default function CartSummary() {
           variant="primary"
           className="w-full"
           disabled={cart.length === 0}
+          onClick={() => {
+            onClose();
+            router.push("/checkout");
+          }}
         >
           checkout
         </Button>

@@ -8,10 +8,15 @@ import { navLinks } from "@/core/constants/navLinks";
 import CategoryLinks from "../ui/CategoryLinks";
 import { cn } from "@/core/utils/cn";
 import { CartModal } from "@/features/cart";
+import ConditionalWrapper from "./ConditionalWrapper";
+import { useCartStore } from "@/core/store/useCartStore";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const cart = useCartStore((state) => state.cart);
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>
@@ -52,14 +57,21 @@ export default function Header() {
           </nav>
 
           <div className="cursor-pointer">
-            <button
-              onClick={() => setIsCartOpen(!isCartOpen)}
-              aria-label="Toggle Cart"
-              aria-expanded={isCartOpen}
-              className="bg-transparent border-none"
-            >
-              <CartIcon className="h-[20px] w-[23px]" />
-            </button>
+            <ConditionalWrapper noShowPath="/checkout">
+              <button
+                onClick={() => setIsCartOpen(!isCartOpen)}
+                aria-label={`Cart with ${totalItems} items`}
+                aria-expanded={isCartOpen}
+                className="bg-transparent border-none relative group p-2 transition-transform active:scale-95"
+              >
+                <CartIcon className="h-[20px] w-[23px]" />
+                {totalItems > 0 && (
+                  <span className="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold w-[18px] h-[18px] flex items-center justify-center rounded-full translate-x-1/2 -translate-y-1/2">
+                    {totalItems}
+                  </span>
+                )}
+              </button>
+            </ConditionalWrapper>
           </div>
         </div>
 
@@ -82,6 +94,7 @@ export default function Header() {
           aria-hidden="true"
         />
       )}
+
       {isCartOpen && (
         <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       )}

@@ -26,8 +26,9 @@ interface InputProps
   extends
     React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
-  label: string;
-  error?: string;
+  readonly label: string;
+  readonly error?: string;
+  readonly disabled?: boolean;
 }
 
 const Input = ({
@@ -36,6 +37,7 @@ const Input = ({
   state,
   layout,
   className,
+  disabled = false,
   ...props
 }: InputProps) => {
   const elemId = useId();
@@ -69,6 +71,7 @@ const Input = ({
 
       <input
         id={inputId}
+        disabled={disabled}
         className={cn(inputVariants({ state: activeState, className }))}
         {...props}
       />

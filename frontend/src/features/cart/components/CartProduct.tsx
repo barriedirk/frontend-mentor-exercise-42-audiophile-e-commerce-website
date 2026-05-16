@@ -35,7 +35,7 @@ export default function CartProduct({ item }: CartProductProps) {
       <QuantitySelector
         className="ml-auto shrink-[150px]"
         size="cart"
-        onDecrement={() => updateQuantity(id, Math.max(0, quantity - 1))}
+        onDecrement={() => updateQuantity(id, quantity - 1)}
         onIncrement={() => updateQuantity(id, quantity + 1)}
         quantity={quantity}
       />

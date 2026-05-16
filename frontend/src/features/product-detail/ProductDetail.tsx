@@ -21,7 +21,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   const [quantity, setQuantity] = useState<number>(1);
 
   return (
-    <div className="max-w-[1110px] mx-auto px-6 py-20">
+    <div className="max-w-[1110px] mx-auto px-6 py-20 animate-fade-in-up">
       <BackButton />
       <article className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-28 mt-10">
         <div className="aspect-auto md:aspect-square bg-[#F1F1F1] flex items-center justify-center">

@@ -23,9 +23,12 @@ export const useCartStore = create<CartState>()(
 
         if (existingItem) {
           set({
-            cart: currentCart.map((item) =>
-              item.id === productId ? { ...item, quantity } : item,
-            ),
+            cart:
+              quantity <= 0
+                ? currentCart.filter((item) => item.id !== productId)
+                : currentCart.map((item) =>
+                    item.id === productId ? { ...item, quantity } : item,
+                  ),
           });
         }
       },

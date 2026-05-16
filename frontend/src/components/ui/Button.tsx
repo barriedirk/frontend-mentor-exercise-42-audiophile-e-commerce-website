@@ -59,7 +59,10 @@ const Button = ({
   type = "button",
   ...props
 }: ButtonProps) => {
-  const classes = cn(buttonVariants({ variant, size, fullWidth, className }));
+  const classes = cn(
+    buttonVariants({ variant, size, fullWidth, className }),
+    "pointer-cursor flex justify-center items-center gap-2",
+  );
 
   if ("href" in props && props.href !== undefined) {
     const { href, ...linkProps } = props as ButtonAsLink;

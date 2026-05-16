@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       className={cn(
-        "bg-black w-full border-b border-white/10",
+        "bg-black w-full border-b border-white/10 animate-fade-in-up",
         "bg-[url(/home/desktop/pattern-hero.png)] bg-repeat",
       )}
     >
@@ -34,7 +34,9 @@ export default function Hero() {
             made for the passionate music enthusiast.
           </p>
 
-          <Button variant="primary">See Product</Button>
+          <Button variant="primary" href="/product/xx99-mark-two-headphones">
+            See Product
+          </Button>
         </div>
       </div>
     </section>

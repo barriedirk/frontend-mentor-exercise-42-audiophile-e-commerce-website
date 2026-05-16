@@ -7,7 +7,7 @@ export default function FeaturedMain() {
     <section className="px-6 lg:px-0 mb-12" aria-labelledby="zx9-heading">
       <div
         className={cn(
-          "max-w-[1110px] mx-auto bg-primary text-white rounded-lg overflow-hidden relative",
+          "max-w-[1110px] mx-auto bg-primary text-white rounded-lg overflow-hidden relative animate-fade-in-up",
           "grid grid-cols-1 lg:grid-cols-2 items-center",
           "pt-14 pb-14 lg:pt-0 lg:pb-0 lg:h-[560px]",
           "bg-[url('/home/desktop/pattern-circles.svg')] bg-no-repeat",

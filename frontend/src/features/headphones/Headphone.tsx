@@ -7,7 +7,7 @@ export default function Headphones() {
     <>
       <Heading text="Headphones" level="h1" />
 
-      <div className="max-w-[1440px] mx-auto px-6">
+      <div className="max-w-[1440px] mx-auto px-6 animate-fade-in-up">
         <div className="flex flex-col gap-[120px] my-[64px] lg:my-[160px]">
           <ProductRecommendation
             isNewProduct={true}

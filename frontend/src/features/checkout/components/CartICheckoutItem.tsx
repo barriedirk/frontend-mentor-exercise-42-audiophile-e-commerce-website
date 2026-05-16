@@ -4,9 +4,13 @@ import { CartItem } from "@/core/types/cartItem.types";
 
 interface CartCheckoutItemProps {
   readonly item: CartItem;
+  readonly imageSize: number;
 }
 
-export default function CartCheckoutItem({ item }: CartCheckoutItemProps) {
+export default function CartCheckoutItem({
+  item,
+  imageSize = 64,
+}: CartCheckoutItemProps) {
   const { name, price, image, quantity } = item;
 
   return (
@@ -14,8 +18,8 @@ export default function CartCheckoutItem({ item }: CartCheckoutItemProps) {
       <Image
         src={image.mobile}
         alt={name}
-        width={64}
-        height={64}
+        width={imageSize}
+        height={imageSize}
         className="bg-slate-100 rounded-lg"
       />
       <div className="flex flex-col gap-1">

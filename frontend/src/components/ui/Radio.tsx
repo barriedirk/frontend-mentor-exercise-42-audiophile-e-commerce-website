@@ -21,10 +21,11 @@ interface RadioProps
   extends
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "checked">,
     VariantProps<typeof radioContainerVariants> {
-  label: string;
-  name: string;
-  value: string;
-  checked?: boolean;
+  readonly label: string;
+  readonly name: string;
+  readonly value: string;
+  readonly checked?: boolean;
+  readonly disabled?: boolean;
 }
 
 const Radio = ({
@@ -33,6 +34,7 @@ const Radio = ({
   checked,
   className,
   name,
+  disabled = false,
   ...props
 }: RadioProps) => {
   const elemId = useId();
@@ -51,6 +53,7 @@ const Radio = ({
         name={name}
         className="sr-only"
         checked={checked}
+        disabled={disabled}
         {...props}
       />
 

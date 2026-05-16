@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 import { createPortal } from "react-dom";
 
 interface PortalProps {
-  children: ReactNode;
-  containerId?: string;
+  readonly children: ReactNode;
+  readonly containerId?: string;
 }
 
 export default function Portal({

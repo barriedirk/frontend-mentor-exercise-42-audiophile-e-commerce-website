@@ -18,6 +18,7 @@ interface FormInputProps<T extends FieldValues> {
   readonly className?: string;
   readonly mask?: RegexMaskType;
   readonly customRegex?: RegExp;
+  readonly disabled?: boolean;
   readonly inputMode?: React.InputHTMLAttributes<HTMLInputElement>["inputMode"];
   readonly maxLength?: React.InputHTMLAttributes<HTMLInputElement>["maxLength"];
 }
@@ -29,6 +30,7 @@ export function FormInput<T extends FieldValues>({
   className,
   mask,
   customRegex,
+  disabled,
   ...props
 }: FormInputProps<T>) {
   const elemId = useId();
@@ -50,6 +52,7 @@ export function FormInput<T extends FieldValues>({
             error={error?.message?.toString()}
             aria-labelledby={labelId}
             aria-describedby={errorId}
+            disabled={disabled}
             {...field}
             {...props}
             onChange={(e) => {

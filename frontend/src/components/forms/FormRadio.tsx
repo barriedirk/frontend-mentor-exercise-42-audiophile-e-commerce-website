@@ -14,6 +14,7 @@ interface FormRadioProps<T extends FieldValues> {
   readonly label: string;
   readonly value: string;
   readonly className?: string;
+  readonly disabled?: boolean;
 }
 
 export function FormRadio<T extends FieldValues>({
@@ -22,6 +23,7 @@ export function FormRadio<T extends FieldValues>({
   label,
   className,
   value,
+  disabled = false,
 }: FormRadioProps<T>) {
   const elemId = useId();
   const inputId = `${elemId}-input`;
@@ -44,6 +46,7 @@ export function FormRadio<T extends FieldValues>({
             aria-describedby={errorId}
             onBlur={field.onBlur}
             name={field.name}
+            disabled={disabled}
           />
         </div>
       )}
