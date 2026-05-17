@@ -1,4 +1,4 @@
-import { CartItem } from "@/core/types/product.types";
+import { CartItem } from "../types/cartItem.types";
 
 export const SHIPPING_FEE = 50;
 export const VAT_RATE = 0.2;
@@ -16,10 +16,6 @@ export const CartEngine = {
     return subtotal + vat + shipping;
   },
 
-  /**
-   * Senior Tip: Returns a consolidated summary to avoid multiple
-   * calculations across components.
-   */
   getCartSummary: (items: readonly CartItem[]) => {
     const subtotal = CartEngine.calculateSubtotal(items);
     const vat = CartEngine.calculateVat(subtotal);

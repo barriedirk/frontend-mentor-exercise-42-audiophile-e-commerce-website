@@ -6,7 +6,7 @@ const meta: Meta<typeof Radio> = {
   component: Radio,
   tags: ["autodocs"],
   argTypes: {
-    isSelected: {
+    checked: {
       control: "boolean",
       description: "Toggles the active/selected visual state",
     },
@@ -30,7 +30,7 @@ type Story = StoryObj<typeof Radio>;
 export const Default: Story = {
   args: {
     label: "e-Money",
-    isSelected: false,
+    checked: false,
     name: "payment-method",
   },
 };
@@ -38,7 +38,7 @@ export const Default: Story = {
 export const Selected: Story = {
   args: {
     label: "Cash on Delivery",
-    isSelected: true,
+    checked: true,
     name: "payment-method",
   },
 };
@@ -49,12 +49,19 @@ export const Selected: Story = {
 export const RadioGroup: Story = {
   render: () => (
     <div className="flex flex-col gap-4 w-[300px]">
-      <Radio label="e-Money" isSelected={true} name="group1" readOnly />
       <Radio
-        label="Cash on Delivery"
-        isSelected={false}
+        label="e-Money"
+        checked={true}
         name="group1"
         readOnly
+        value="one"
+      />
+      <Radio
+        label="Cash on Delivery"
+        checked={false}
+        name="group1"
+        readOnly
+        value="two"
       />
     </div>
   ),
