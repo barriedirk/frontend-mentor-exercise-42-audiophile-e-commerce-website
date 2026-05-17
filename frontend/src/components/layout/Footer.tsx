@@ -25,7 +25,7 @@ export default function Footer() {
           </Link>
           <nav className="flex flex-col md:flex-row gap-8 items-center">
             {navLinks.map((link) => (
-              <NavLink {...link} />
+              <NavLink key={link.href} {...link} />
             ))}
           </nav>
         </div>

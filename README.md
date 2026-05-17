@@ -5,7 +5,7 @@
 - [Github](https://github.com/barriedirk/frontend-mentor-exercise-42-audiophile-e-commerce-website)
 - [Live Demo](https://audiophile-e-commerce-website-web-a.vercel.app/)
 - [Storybook](https://story-book-audiophile-e-commerce-we.vercel.app/)
-- [Repository Frontend Mentor](https://www.frontendmentor.io/solutions/audiophile-e-commerce-website-y5Jp3150t)
+- [Repository Frontend Mentor](https://www.frontendmentor.io/solutions/audiophile-e-commerce-website-sm_UEbzN3F)
 
 
 
